@@ -40,4 +40,21 @@ fn main() {
     println!("Первый элемент: {}", data.0);
     println!("Второй элемент: {}", second);
     println!("Первый и третий элемент через запятую: {}, {}",first, last);
+
+    let coordinates: (f32, f32) = (2.5, 1.5);
+    //let (x, y) = coordinates;
+    //let x = coordinates.0;
+    //let y = coordinates.1;
+    //let empty: () = ();
+    println!("Координаты: {:?}", coordinates);
+
+    //let numbers = [1, 2, 3, 4, 5];
+    let days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+    //let numbers: [u8; 3] = [1, 2, 3];
+    //println!("Числа:{:?}", numbers);
+    //let repeat = ["Bob"; 5];
+    //println!("repeat={:?}", repeat);
+    let first = days[0];
+    let last = days[6];
+    println!("Первый и последный день: {first}, {last}.");
 }
