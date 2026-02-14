@@ -46,7 +46,6 @@ fn remember() {
     //let letter = 'z';
     //let omega: char = 'Ω';
     let heart: char = '♡';
-    
     println!("heart = {}", heart);
 
     let data: (u8, f32, bool) = (10, 3.5, false);
@@ -84,20 +83,22 @@ fn remember() {
     repeat("lol", 5);
 
     println!("celsius_to_fahrenheit(20.0)={:?}", celsius_to_fahrenheit(20.0));
-    
+
     let result = add(3,4);
     dbg!(result);
 
     dbg!(20 + 50);
 }
+*/
 
-/* 
+/*
 коментарий
 в
 несколько
 строк
 */
 
+/*
 fn get_rating(movie: &str) -> i32 {
     // Movie API Docs: https//www.movie-ratings.com/docs
     let rating: i32 = get_movie_data(movie);
@@ -147,8 +148,9 @@ fn long_enought_char_count() {
     // как "правильно" посчиатать символы
     let letgth = password.chars().count();
 }
+*/
 
-fn main() {
+/*
     dbg!(get_response("Привет чел"));
     dbg!(get_response("Как дел"));
     dbg!(get_response("Норм"));
@@ -169,6 +171,9 @@ fn get_response(input: &str) -> &str {
         "Я не понимаю..."
     }
 }
+*/
+
+/*
 fn main() {
     analyze_number(5);
 }
@@ -182,12 +187,14 @@ fn analyze_number(n: i32) {
         println!("{n} крутое число");
     }
 }
+*/
 
+/*
 fn main() {
     let n = 10;
     let odd_even = if n % 2 == 0 {"четное"} else {"не четное"};
     dbg!(odd_even);
-    
+
     // не сработает следующий код, состояния if else должны быть одного типа
     // let is_connected = false;
     // let result = if is_connected {"connected"} else {-1};
@@ -195,17 +202,17 @@ fn main() {
 }
 */
 
+/*
 fn main() {
-    /*
     // будет выполняться бесконечно (пока не кончиться размер у переменной)
     let mut n = 0;
     loop {
         n += 1;
         println!("n={:?}", n);
     }
-    */
+*/
 
-    /*
+/*
     let mut counter = 5;
     loop {
         println!("Счёт: {counter}");
@@ -217,15 +224,139 @@ fn main() {
         }
     }
     println!("Выполняется код после loop")
-    */
+
     let mut counter = 0;
     let result = loop {
-        println!("Счёт: {counter}");
+        println!("Счёт: {countfr}");
         counter += 1;
 
         if counter == 5 {
             break counter;
         }
-    };   
+    };
     println!("result={:?}", result)
+}
+    let a = 0.2;
+            let b = 0.7;
+
+    let exp = 0.000_000_000_000_01;
+    let l = a + b;
+        let e = (a + b).eq(&l);
+    let c = f64::abs((a + b) - l) <= exp;
+    println!("l is {l}, c is {c}");
+    println!("e is {}", e);
+*/
+
+/*
+    let mut number = 5;
+
+    while number > 0 {
+        number -= 1;
+        println!("число = {:?}", number);
+    }
+
+    println!("цикл закончился")
+
+    let mut n = 10;
+
+    while n > 0 {
+        n -= 1;
+        /* if n == 5 { */
+        if n % 2 == 0 {
+        /*    println!("Дошли до 5"); */
+            continue;
+        }
+    println!("Число = {:?}", n);
+    }
+*/
+
+/*
+    let names = ["bubblegum", "throw-ex", "silmarions"];
+
+    for name in names {
+        println!("{name} говорит: привет");
+    }
+*/
+/*
+    let numbers: [i32; 5] = [1, 2, 3, 4, 5];
+    let mut power_total = 0;
+
+    for number in numbers {
+        let squarted = number.pow(2);
+        println!("{number}: {:?}", squarted);
+        power_total += squarted;
+    }
+
+    dbg!(power_total);
+
+*/
+/*
+    let mut main_count = 0;
+
+    'main: loop {
+        println!("Внешний счетчик: {main_count}");
+        let mut inner_count = 0;
+
+        loop {
+            println!("Внутренний счетчик: {inner_count}");
+            inner_count += 1;
+
+            if inner_count == 3 {
+                println!("---");
+                break;
+            }
+
+            if main_count == 3 {
+                println!("Вышли из всех циклов");
+                break 'main;
+            }
+        }
+        
+        main_count += 1;
+    }
+*/
+/*
+    let mut s = String::from("Привет");
+    println!("s = {:?}", s);
+    s += ", bubblegum";
+    println!("s = {:?}", s);
+*/
+/*
+    let a = 1;
+    let b = a;
+
+    dbg!(a);
+    dbg!(b);    
+    
+    let original_text = String::from("qwe");
+/*  let text_copy = original_text;
+
+    dbg!(original_text); // не сработает -> original_text уже не существует
+    dbg!(text_copy);
+*/
+    let name = original_text;
+
+    dbg!(name);
+*/
+/*
+    let mut var = String::from("qwe"); // rust дропнет значение на слдеующей строке
+    var = String::from("ewq");
+
+    println!("var = {var}");
+*/
+fn main() {
+    let var = String::from("qwe");
+    let var2 = var; // var не существует после этой строки
+    dbg!(var2); 
+
+    let name = String::from("bubblegum");
+    let name_copy = name.clone();
+
+    dbg!(name);
+    dbg!(name_copy);
+
+    let n1 = 100;
+    let n2 = n1;
+
+    dbg!(n1, n2);
 }
